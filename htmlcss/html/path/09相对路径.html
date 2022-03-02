@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--当我们需要跳转到一个服务器内部的页面时，一般使用相对路径
+        相对路径都会使用.或..开头
+        ./
+        ../
+        ./可以省略不写，如果都没有就默认是省略了./
+    
+        ./表示当前文件所在的目录
+            ./就等于 09相对路径.html的目录 path
+
+        ../表示当前文件所在目录的上一级目录
+    -->
+    <a href="target.html">target</a>
+    <br>
+    <a href="../07列表.html">07列表</a>
+    <br>
+    <a href="./inner/target2.html">target2</a>
+    <br>
+    <a href="../outer/target3.html">target3</a>
+
+
+
+</body>
+</html>

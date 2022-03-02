@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 50px;
+            width: 800px;
+            border: 1px solid black;
+            /* 
+            text-align 文本的水平对齐
+                可选值：
+                    left 左侧对齐
+                    right 右对齐
+                    center 居中对齐
+                    justify 两端对齐
+            */
+            text-align: justify;
+        }
+        span{
+            font-size: 20px;
+            border: 1px solid black;
+            /* 
+                vertical-align 垂直对齐
+                可选值：
+                baseline 默认值 基线对齐
+                top 顶部对齐
+                bottom 底部对齐
+                middle 居中对齐 （元素中线与x字母中线对齐）
+                直接指定值
+            */
+            vertical-align :-10px;
+        }
+        p{
+            border: 1px solid black;
+        }
+        img{
+            vertical-align: top;
+            /* 取消基线对齐 */
+        }
+    </style>
+</head>
+<body>
+    <div>今天天气 hello<span>真不错 hello</span>!
+    </div>
+
+    <p><img src="./img/jennie kim.jpg" ></p>
+    <!-- <div>今天天气好 hello 今天天气好 hello 今天天气好 hello 今天天气好 hello 今天天气好 hello</div> -->
+</body>
+</html>

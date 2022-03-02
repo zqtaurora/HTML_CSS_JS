@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            border: 1px solid black;
+            background-color: silver;
+            perspective: 800px;
+
+        }
+
+        .box1 {
+            width: 400px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 200px auto;
+
+            /* z轴 近大远小，必须给html设置视距 */
+            transition: 1s;
+        }
+
+        body:hover .box1 {
+            /* 
+            旋转：rotate
+                rotateX()
+                rotateY()
+                rotateZ()
+                1turn
+            */
+            /* transform: rotateZ(90deg); */
+            /* transform:rotateY(180deg) ; */
+            transform:rotateY(180deg) translateZ(200px);
+            backface-visibility: hidden;
+            /* 默认值 visible */
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="../exercise/img/03/1.jpg" alt="">
+    </div>
+</body>
+
+</html>

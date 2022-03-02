@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        样式的冲突：
+            发生样式冲突时，由样式权重决定
+
+        选择器的权重排序：
+                内联样式：1,0,0,0
+                id选择器：0,1,0,0
+                类和伪类选择器：0,0,1,0
+                元素选择器：0,0,0,1
+                通配选择器：0,0,0,0
+                继承的样式：没有优先级
+
+        将所有选择器优先级相加，优先级越高，越优先显示（分组选择器单独计算）
+        相加之后不会跨数量级
+        如果优先级相等，优先选择靠后的样式
+
+        !important 获取最高级的优先级
+
+        */
+        div#box1{
+            /* 优先级为101 */
+            background-color: orange;
+        }
+        div{
+            color:yellow;
+
+        }
+        .red{
+            color:red;
+        }
+        .d1{
+            color:purple;
+        }
+        /* div,p,span{} 优先级为单个选择器*/
+    </style>
+</head>
+<body>
+    <div id="box1" class="red d1 d2 d3" style="background-color:skyblue">i am div</div>
+</body>
+</html>

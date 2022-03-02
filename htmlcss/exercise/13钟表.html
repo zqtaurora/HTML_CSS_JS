@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* .sec-wrapper{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            animation:run 60s steps(60);
+        }
+        .sec{
+            height: 250px;
+            width: 4px;
+            background-color: black;
+            margin: 0 auto;
+
+            animation:run 60s;
+        } */
+        .clock{
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* background-color: #bfa; */
+            border-radius:50%;
+            border:10px solid black;
+            position:relative;
+        }
+        .clock>div{
+            position:absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin:auto;
+        }
+        .hour-wrapper{
+            width: 70%;
+            height: 70%;
+            /* background-color: #bfa; */
+            /* animation:run infinite 43200s steps(12); */
+            animation:run infinite 43200s linear;
+
+            
+        }
+        .hour{
+            height: 50%;
+            width: 8px;
+            background-color: #000;
+            margin: 0 auto;
+
+        }
+        .min-wrapper{
+            width: 80%;
+            height: 80%;
+            /* background-color: #bfa; */
+            animation:run infinite 3600s steps(60);
+
+            
+        }
+        .min{
+            height: 50%;
+            width: 4px;
+            background-color: #000;
+            margin: 0 auto;
+
+        }
+        .sec-wrapper{
+            width: 95%;
+            height: 95%;
+            /* background-color: #bfa; */
+            animation:run infinite 60s steps(60);
+            
+        }
+        .sec{
+            height: 50%;
+            width: 3px;
+            background-color: red;
+            margin: 0 auto;
+
+        }
+
+        @keyframes run{
+            from{
+                transform:rotateZ(0);
+            }
+            to{
+                transform:rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="sec-wrapper">
+        <div class="sec"></div>
+    </div> -->
+
+    <!-- 创建表的容器 -->
+    <div class="clock">
+        <!-- 创建时针 -->
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+
+        <!-- 创建分针 -->
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div>
+
+        <!-- 创建秒针 -->
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+    </div>
+
+</body>
+</html>

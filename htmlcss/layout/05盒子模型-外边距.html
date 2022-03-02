@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        外边距 margin
+            外边距不会影响盒子可见框的大小
+            外边距会影响盒子的位置
+            四个方向：
+            margin-top
+                上外边距，元素往下走
+            margin-right
+            margin-bottom
+            margin-left
+                左外边距，元素往右走
+
+            设置左上移动自身
+            设置右下移动其他元素
+
+            margin可以设置负值，往相反方向走。
+            margin 可以同时设置四个方向的大小
+        */
+        .box1{
+            width:200px;
+            height:200px;
+            background-color:#bfa;
+            border:10px solid orange;
+
+
+            margin-top: 100px;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 100px;
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            background-color:#bfa;
+            border:10px solid orange;
+
+
+            /* margin-top: 100px;
+            margin-left: 100px; */
+            /* margin-right: 100px;
+            margin-bottom: 100px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

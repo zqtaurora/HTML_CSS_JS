@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD轮播图</title>
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <style>
+        *{margin:0px;padding: 0;}
+        ul li{
+            list-style: none;
+        }
+        img{
+            width: 590px;
+            height: 470px;
+        }
+        .img-list{
+            margin: 50px auto;
+            width: 590px;
+            height: 470px;
+
+            position: relative;
+        }
+        .img-list li{
+            position: absolute;
+        }
+        /* 通过修改元素的层级来显示指定的图片 */
+        .img-list li:nth-child(3){
+            z-index:1;
+        }
+        .pointer{
+            position: absolute;
+            z-index:9999;
+            left: 40px;
+            bottom: 20px;
+            
+        }
+        /* 设置点的样式 */
+        .pointer a{
+            /* 设置元素向左浮动 */
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin:0px 6px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255,.3);
+            /* 将背景颜色值设置到内容区，边框和内边距不再有背景颜色 */
+            background-clip: content-box;
+            border: 2px solid transparent;
+            
+        }
+        
+        .pointer a:hover{
+            background-color: #fff;
+            border: 2px solid rgba(255, 255, 255,.3);
+
+        }
+    </style>
+</head>
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./img/01/1.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/2.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/3.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/4.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/1.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/2.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/3.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./img/01/4.jpg" alt=""></a></li>
+
+        <div class="pointer">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+</html>

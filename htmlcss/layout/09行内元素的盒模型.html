@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1{
+                background-color:yellow;
+                /* margin: 100px; */
+                /* padding: 100px; */
+                /* border:100px solid red; */
+                /* width: 100px;
+                height:100px; */
+                /* 
+                行内元素的盒模型：
+                    行内元素不支持设置高宽
+                    可以设置padding，垂直方向的padding不会影响到布局
+                    可以设置border，垂直方向的border不会影响到布局
+                    可以设置margin，垂直方向的margin不会影响到布局
+
+                    
+                */
+        }
+        .box1{
+                width: 200px;
+                height:200px;
+                background-color:orange;
+        }
+        a{
+            /* 
+            display:用来设置元素显示的类型
+                    可选值：
+                    inline 将元素设置为行内元素
+                    block 将元素设置成块元素
+                    inline-block 将元素设置为行内块元素
+                        可以设置宽高，但不会独占一行
+                    none 不在页面中显示(不占位置)
+
+            visibility:用来设置元素的显示状态
+                    可选值：
+                        visible 正常显示（默认值）
+                        hidden  隐藏(不显示 但占位置)
+
+            */
+            /* display: inline-block; */
+            width: 100px;
+            height:100px;
+            background-color:#bfa;
+        }
+    </style>
+</head>
+<body>
+    <!-- 删掉超链接之间的空格或换行，才能让显示出来的块中间吴空格 -->
+    <a href="javascript:;">link</a><a href="javascript:;">link</a>
+    <span class="s1">span</span>
+    <span class="s1">span</span>
+    <span class="s1">span</span>
+    <div class="box1"></div>
+</body>
+</html>

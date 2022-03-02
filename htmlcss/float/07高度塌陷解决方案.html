@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border:10px solid;
+            /* overflow: hidden; */
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color:#bfa;
+            float: left;
+        }
+       
+        .box1::after{
+            /*
+            伪元素after默认为行内元素
+            所以要设置为块元素
+            */
+            content:"";
+            display:block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3">aa</div> -->
+    </div>
+</body>
+</html>

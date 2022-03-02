@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+            /* border:10px red solid; */
+
+            /* 设置border会挤开其他元素 */
+            /* outline 不会挤开其他元素，不会影响整体布局，只是加了外轮廓*/
+            /* outline:10px red solid; */
+
+            /* box-shadow:用来设置元素的阴影效果，不会影响布局 */
+            /* 前两个值为阴影偏移量，
+            第一个为 水平偏移量 正值向右移动，负值向左移动
+            第二个为 垂直偏移量 正值向下移动，负值向上移动
+            第三个为阴影的模糊半径
+            第四个为阴影的颜色
+            */
+            box-shadow:10px 10px 50px rgba(0,0,0,0.3);
+
+        }
+        .box1:hover{
+            /* outline:10px red solid; */
+            
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /* 
+            圆角 :
+            border-radius    
+            也可以设置四个参数，参数顺序为顺时针 ，先从左上开始。
+            三个参数  ： 左上 右上左下 右下
+            两个参数  ： 左上右下 右上左下
+            */
+
+            /*
+            后面参数设置的圆的半径大小
+            可以设置两个参数 前面x半径 后面y半径 得到椭圆
+            border-radius: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px; 
+            */
+            /* 将元素设置成圆形 */
+            border-radius:50%;
+           
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box1"></div> -->
+    <!-- <span>hello</span> -->
+    <div class="box2"></div>
+
+</body>
+</html>

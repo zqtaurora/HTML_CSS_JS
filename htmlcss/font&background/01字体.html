@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* font-face可以将服务器端的字体直接提供给用户去使用 
+            问题：
+            1.加载速度
+            2.版权
+            3.字体格式
+        */
+        @font-face {
+            /* 指定字体的名字 */
+            font-family: "myfont";
+            /* 服务器上字体的路径 */
+            src: url("./font/SCRIPTBL.TTF")format("truetype")
+            /* ,url("./font/MISTRAL.TTF")format("truetype") */
+            ;
+        }
+        p{
+            color:green;
+            font-size: 40px;
+            /*
+            相关单位：
+            em相当于当前元素的一个font-size
+            rem相当于根元素的一个font-size
+            */
+            /* font-family: 'Courier New', Courier, monospace; */
+            font-family:"myfont";
+            /* 
+            font-family 字体族（字体的格式）
+            可选值：
+            serif      衬线字体
+            sans-serif 非衬线字体
+            monospace  等宽字体
+            指定字体类别，浏览器自动选择该类别下的字体
+            */
+        }
+    </style>
+</head>
+<body>
+    <p>
+        hello world!
+    </p>
+</body>
+</html>

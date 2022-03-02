@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+        /* 
+        交集选择器：
+            作用：选中同时符合多个条件的元素
+            如果包含元素选择器，必须以元素选择器开头
+
+        选择器分组（并集选择器）：
+            同时选择多个标签对应的元素
+
+            #b1,.red,h1,p{}
+        */
+        div.red{
+            font-size: 30px;
+        }
+        .a.b.c{
+            color:blue;
+        }
+        h1,span{
+            color:green;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="red">我是div</div>
+    <div class="red a b c">我是div2</div>
+    <p class="red">我是p element</p>
+    <p class="red2">我是p element2</p>
+    <h1>head</h1>
+    <span>span</span>
+
+</body>
+</html>

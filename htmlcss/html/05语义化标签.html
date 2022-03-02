@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        块元素：
+
+        行内元素：
+
+            一般情况下，块元素里放行内元素，行内元素里不能放块元素
+            p标签里不能放任何块元素
+
+        浏览器在解析网页时会自动对网页中不符合规范的内容进行修正
+            比如：
+                标签写在了html标签外；
+                p标签里放了块元素；
+                根元素中出现了除head和body外的子元素
+                
+    -->
+    <!--p标签里放h标签，浏览器会自动修改-->
+    <p>
+        <h1>haha</h1>
+    </p>
+</body>
+</html>
+
+<!--浏览器会将下面这句话放在html里面-->
+<h1>我就要写在html外面</h1>

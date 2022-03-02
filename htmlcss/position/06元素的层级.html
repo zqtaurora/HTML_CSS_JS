@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 40px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            position: absolute;
+            z-index: 1;
+
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color:rgba(255,0,0,.3);
+
+            
+            position: absolute;
+            
+            top: 50px;
+            left:50px;
+            z-index: 2;
+
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            top: 100px;
+            left:100px;
+            z-index:3 ;
+
+
+        }
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+             position: absolute;
+            /*
+            
+            top: 100px;
+            left:100px;
+            z-index:3 ; */
+
+
+        }
+        /* 
+        z-index 属性来指定元素的层级
+            参数为整数，值越大元素层级越高，越优先显示
+
+            层级一样，后面的会覆盖前面的
+
+            祖先元素不会盖住后代元素（无论层级为多少）
+
+        */
+   
+    </style>
+</head>
+
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3
+        <div class="box4">4</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 40px;
+            height: 2000px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* margin-left: 200px;
+            margin-top: -200px; */
+            position:fixed;
+            
+
+        }
+        /* 
+            fixed 固定定位
+            固定定位也是一种绝对定位，所以固定定位的大部分特点都和绝对定位一样
+            特点：
+            2.开启绝对定位之后，元素从文档流中脱离
+            3.绝对定位会改变元素的性质
+            4.绝对定位会提升元素的层级
+            5.绝对定位相对于其包含块进行定位
+
+            与绝对定位的区别：
+            固定定位永远参照于浏览器的视口进行定位
+            固定定位的元素不会随网页的滚动条滚动
+
+        */
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .box4 {
+            width: 400px;
+            height: 400px;
+            background-color: tomato;
+            /* position: relative; */
+        }
+
+        .box5 {
+            width: 300px;
+            height: 300px;
+            background-color: plum;
+            /* position: relative; */
+
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="box1">1</div>
+
+    <div class="box4">4
+        <div class="box5">5
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

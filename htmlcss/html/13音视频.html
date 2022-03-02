@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio</title>
+</head>
+<body>
+    <!--
+        audio 标签用来向页面引入一个外部的音频文件
+            音视频文件引入时，默认情况下不允许用户自己控制播放停止
+
+        属性：
+            controls 是否允许用户控制播放
+
+            autoplay 设置自动播放
+                如果设置了autoplay 则音乐在打开网页时会自动播放
+                如果对网页做更改自动刷新会重新自动播放，但只单纯地刷新网页不会重新自动播放
+                一般浏览器不会设置自动播放
+
+            loop 循环播放   
+
+    -->
+    <!-- <audio src="./source/Bülow - Two Punks In Love.mp3" controls ></audio> -->
+
+    <!--
+        除了通过src来指定外部文件的路径，还可以通过source来指定文件的位置
+            -ie8以下不支持audio标签，故不能识别audio标签时会显示文字
+            -mp3、ogg格式都写可以保证某些浏览器不兼容，如果都不能识别则会显示文字
+    -->
+    <audio controls>
+        sorry,do not support.
+        <source src="./source/Bülow - Two Punks In Love.mp3">
+        <source src="./source/Bülow - Two Punks In Love.ogg">
+        <embed src="./source/Bülow - Two Punks In Love.mp3" type="audio/mp3">
+    </audio>
+
+    <!--ie8以下可支持embed标签，并且会自动播放-->
+    <!-- <embed src="./source/Bülow - Two Punks In Love.mp3" type="audio/mp3"> -->
+
+    <!--
+        video 标签用来引入视屏资源
+        文件格式webm、mp4
+    -->
+    <br>
+    <video controls>
+        <source src="./source/Bülow - Two Punks In Love.webm">
+        <source src="./source/Bülow - Two Punks In Love.mp3">
+        <embed src="./source/Bülow - Two Punks In Love.mp4" type="video/mp4">
+    </video>
+    <br>
+    <iframe frameborder="0" width="400"src="https://v.qq.com/txp/iframe/player.html?vid=q0041j617a8" allowFullScreen="true"></iframe>
+
+</body>
+</html>

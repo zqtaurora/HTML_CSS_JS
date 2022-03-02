@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            /* 高度默认被子元素撑开 */
+            background-color:#bfa;
+            height:600px;
+        }
+        .inner{
+                width: 200px;;
+                height:200px;
+                margin-bottom: 100px;
+                background-color:orange;
+        }
+        /* 
+        子元素大小大于父元素大小，称为溢出
+            overflow属性 处理父元素中溢出的子元素
+            visible 溢出外部显示 （默认值）
+            hidden 溢出被裁减不会显示
+            scroll 滚动条
+            auto 根据需要生成滚动条
+        
+        overflow-x
+        overflow-y
+
+        */
+        .box1{
+            width:200px;
+            height:200px;
+            background-color:red;
+            overflow:auto;
+        }
+        .box2{
+            width:100px;
+            height:400px;
+            background-color:yellow;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

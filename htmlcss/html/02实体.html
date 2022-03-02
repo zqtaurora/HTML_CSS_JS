@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实体</title>
+</head>
+<body>
+    <!--1.网页中的多个空格自动解析为1个空格-->
+    
+    <p>
+        针不戳啊     针不戳
+    </p>
+    <!--字母两侧的大于小于符号可能会被认为标签-->
+    <p>
+        a <b>c</b>
+    </p>
+        
+    <!--基于以上情况，我们需要使用html中的实体（转义字符）
+    实体的语法：
+        1.&实体的名字;
+            例：&nbsp;空格
+                &gt;大于
+                &lt;小于
+                &copy;版权符号
+    -->
+    <p>
+        针不戳啊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 针不戳
+    </p>
+
+    <p>
+            a&lt;b&gt;c
+    </p>
+
+    </body>
+</html>

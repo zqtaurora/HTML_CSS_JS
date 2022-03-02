@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            display: block;
+            width: 93px;
+            height: 29px;
+            background-image: url(./img/09/btn.png);
+        }
+        a:hover{
+            background-position: -93px 0px;
+        }
+        a:active{
+            background-position: -186px 0px;
+
+        }
+        /* 
+        解决图片闪烁问题：
+        将所有图片放在一张图片里面，这样图片会同时加载到浏览器中
+        再根据对应状态设置background-position来切换图片
+        这种图称为雪碧图，这种技术称为css-sprite
+
+        特点：
+        一次性见图片加载进页面，减少请求的次数，只适用于背景
+        */
+    </style>
+</head>
+<body>
+    <a href="javascript:;"></a>
+</body>
+</html>

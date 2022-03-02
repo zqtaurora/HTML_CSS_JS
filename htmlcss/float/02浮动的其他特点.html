@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;height: 100px;
+            background-color: #bfa;
+            float: left;
+            /* 
+            浮动元素不会盖住文字，文字会自动环绕在浮动元素周围
+
+            */
+        }
+        .box2{
+            background-color: yellowgreen;
+            float: left;
+            /* 
+            脱离文档流的特点：
+                块元素：
+                    1.块元素不再独占页面的一行
+                    2.脱离文档流以后，块元素的宽高默认被内容撑开
+                行内元素：
+                    1.行内元素脱离文档流以后会变成块元素，特点和块元素一样
+                    
+                脱离文档流之后，不需要再区分块和行内元素了
+            3.
+            */
+        }
+        .box3{
+            background-color:green;
+            /* float: left; */
+           
+        }
+        .s1{
+            width: 300px;
+            height: 300px;
+            background-color: #abc;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box1"></div>
+    <p> abcqwertyuiopqwertyuiopqwertyuiopqwertyuiop       qwertyuiopqwertyuiop        qwertyuiopqwertyuiop        qwertyuiopqwertyuiop        qwertyuiopqwertyuiop        qwertyuiopqwertyuiop        qwertyuiopqwertyuiop        qwertyuiop qwertyuiop        qwertyuiopqwertyuiop        abcqwertyuiopqwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop        qwertyuiop       qwertyuiop        qwertyuiop        qwertyuiop    </p> -->
+
+    <span class="s1">我是一个span</span>
+    <!-- <div class="box2">hello</div> -->
+    <!-- <div class="box3">hello</div> -->
+</body>
+</html>

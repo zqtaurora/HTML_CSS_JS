@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        表单:用于提交数据
+        网页中的表单用于将本地的数据提交给远程的服务器
+        使用form来创建表单
+     -->
+     <!-- 
+        form属性：
+         action 表单要提交的服务器的地址
+
+      -->
+
+
+      <!-- 数据要提交到服务器必须给input设置name属性 -->
+     <form action="target.html">
+         <!-- 添加表单项 -->
+         
+         名字: <input type="text" name="abc">
+         <br><br>
+
+         密码: <input type="password" name="password">
+         <!-- 提交按钮 -->
+         <br><br>
+
+         <!-- 
+            必须有相同的name属性才能只选择一个 并且设置不同的value值
+            checked 将单选按钮设置为默认选中状态
+        -->
+         单选按钮：<input type="radio" name="haha" value="a"> 
+                    <input type="radio" name="haha" value="b" checked> 
+        <br><br>
+
+        <!-- 多选框 checked-->
+        多选框：<input type="checkbox" name="1" value="1">
+        <input type="checkbox" name="1" value="2" checked>
+        <input type="checkbox" name="1" value="3">
+        <br><br>
+
+
+        <!-- 下拉列表 添加selected设置为默认选中状态 -->
+        <select name="list" id="">
+            <option value="1">1</option>
+            <option selected value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br><br>
+
+         
+         <input type="submit" value="确认">
+     </form>
+</body>
+</html>

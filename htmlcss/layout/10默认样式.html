@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        /* 
+        默认样式：
+            通常情况下，浏览器都有默认样式
+            默认样式的存在会影响到页面布局（在编写页面时去除默认样式）
+        重置样式表：
+            reset.css 去除浏览器的默认样式
+            normalize.css对默认样式进行统一
+        
+        */
+        .box1{
+            width:100px;
+            height:100px;
+            border:1px solid black;
+        }
+        /* 
+        body{
+            margin:0;
+        }
+        p{
+            margin: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            #去除项目符号 就是列表前面的点
+            list-style: none;
+            margin-left:20px;
+            
+        } 
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>para</p>
+    <p>para</p>
+    <p>para</p>
+    <p>para</p>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>

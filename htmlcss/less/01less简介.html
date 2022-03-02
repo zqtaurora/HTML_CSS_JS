@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            --color:#ffffaa;
+
+        }
+        .box1{
+            /* width: calc(200px/2); */
+            width: calc(200px*2);
+            /* width: 200px; */
+            height: 200px;
+            /* background-color: #bfa; */
+            background-color: var(--color);
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            /* color: #bfa; */
+            color: var(--color);
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            /* border:10px solid #bfa; */
+            border:10px solid var(--color);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">aaaaa</div>
+    <div class="box2">aaaaa</div>
+    <div class="box3">aaaaa</div>
+</body>
+</html>

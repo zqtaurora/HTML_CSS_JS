@@ -1,0 +1,72 @@
+.box1{
+    .box2{
+        color:red;
+    }
+
+    >.box3{
+        color:red;
+    }
+
+    // 为box1设置hover
+    // &就表示外层的父元素
+    &:hover{
+        color:orange;
+    }
+    div &{
+        width: 100px;
+    }
+}
+
+
+// 扩展 extend
+.p1{
+    width: 100px;
+    height: 200px;
+}
+.p2:extend(.p1){color:red;}
+.p3{
+    // 直接对现有样式进行引用
+    // mixin混合
+    .p1;
+}
+
+
+// 使用类选择器时在后边加括号，实际上创建了一个mixins
+// 不会在生成的css中展现出来
+.p4(){
+    width: 100px;
+    height: 200px;
+    background-color: #bfa;
+}
+.p5{
+    .p4; 
+    color:red;
+}
+
+// 混合函数 可以在混合函数中直接设置变量
+.test(@w:100px,@h:100px){
+    width: @w;
+    height: @h;
+    // background-color: #bfa;
+}
+div {
+    .test(300px);
+}
+
+span{
+  color:average(red,yellow);
+}
+html{
+  width: 100%;
+  height: 100%;
+
+}
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #bfa;
+  border: 1px solid black;
+}
+body:hover{
+  background-color: darken(#bfa,50%);
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(236, 236, 236);
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 0 auto;
+            margin-top:200px;
+            /* transform:translateX(100px); */
+            /* transform:translateY(100px); */
+            transform:translateZ(100px);
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #ffffaa;
+            margin: 0 auto;
+        }
+        .box4,.box5{
+            width: 220px;
+            height: 300px;
+            background-color: #fff;
+            margin: 0 10px;
+            float:left;
+            transition:transform .3s;
+        }
+        .box4:hover,.box5:hover{
+            transform:translateY(-5px);
+            box-shadow:0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .box3{
+            
+            background-color: #ffffaa;
+            position:absolute;
+            /* 
+            这种方式只适用于元素的大小确定
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto; 
+            */
+            left:50%;
+            transform:translateX(-50%) translateY(-50%);
+        }
+        /* 
+        变形就是指通过css来改变元素的形状和位置
+            特点：
+            不会影响元素的布局
+            transform用来设置元素变形效果
+                可选值：
+                translateX()  沿x轴平移
+                translateY()  沿y轴平移
+                translateZ()  沿z轴平移
+                50% 是相对于自身移动50%
+
+        */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <!-- <div class="box3">aaaaaaaaaaaaaaaa</div> -->
+    <!-- <div class="box2"></div> -->
+</body>
+</html>

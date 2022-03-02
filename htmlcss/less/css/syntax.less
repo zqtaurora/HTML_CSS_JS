@@ -1,0 +1,29 @@
+.box1{
+    background-color: #bfa;
+    .box2{
+        background-color: #aaa;
+        .box4{
+            background-color: yellow;
+        }
+    }
+    .box3{
+        background-color: #abcdef;
+    }
+}
+// 变量语法：@变量名
+@a:200px;
+@b:#bfa;
+@c:box6;
+.box5{
+    width: @a;
+    background-color: @b;
+}
+// 作为类名，或者一部分值使用时格式 @{变量名}
+.@{c}{
+    width: @a;
+    background-image: url("@{c}/1.jpg");
+}
+.box6{
+    width: 300px;
+    height: $width;
+}

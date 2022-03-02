@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 500px;
+            border: 10px solid black;
+            display: flex;
+            flex-direction: row;
+            /* 
+            flex-wrap 设置弹性元素是否自动换行
+
+            nowrap 默认值 不会自动换行
+            wrap 自动换行
+            wrap-reverse 自动反方向换行
+            */
+            flex-wrap:wrap-reverse;
+            /* flex-flow:wrap 和 direction 的简写属性 */
+            flex-flow:row wrap;
+
+            /* 
+            justify-content
+            如何分配主轴上的空白空间
+                可选值：
+                    flex-start 元素沿着主轴起边排列
+                    flex-end 元素沿着主轴终边排列
+                    center  元素居中排列
+                    space-around 空白分布到元素两侧
+                    space-between 空白均匀分布到元素中间
+                    space-evenly 空白分布到元素一侧
+
+            */
+            justify-content:center;
+        }
+
+        li {
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+
+            flex-shrink: 0;
+            
+        }
+
+        li:nth-child(1) {
+            /* flex-grow: 1; */
+
+        }
+
+        li:nth-child(2) {
+            background-color: pink;
+            /* flex-grow:2; */
+
+        }
+
+        li:nth-child(3) {
+            background-color: #fffaaa;
+            /* flex-grow:3; */
+
+        }
+    </style>
+</head>
+
+<body>
+   
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

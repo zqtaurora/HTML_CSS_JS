@@ -1,0 +1,26 @@
+/* 公共样式表 */
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+    clear:both;
+}
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color:#333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+/* 用来设置中间容器的宽度 */
+.w{
+    width: 1226px;
+    /* 设置容器居中 */
+    margin: 0 auto;
+}
+a{
+	text-decoration: none;
+    color: #333;
+}
+li{
+	list-style:none;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            position: relative;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position:absolute;
+
+            left:0;
+            right:0;
+            margin-left: auto;
+            margin-right: auto;
+
+            top:0;
+            bottom:0;  
+            margin-top:auto;
+            margin-bottom:auto;
+            /* 
+            如果没有设置left和right，则会先调整left和right使等式成立
+            */
+        }
+        /* 
+        水平布局
+        left+margin-left+padding-left+width+padding-right+margin-right+right=包含块的内容区的宽度
+        当开启绝对定位以后，规则和之前一样
+            当发生过度约束时：
+                如果值中没有auto，自动调整right使等式成立
+                如果值中有auto，自动调整auto使等式成立
+            可以设置auto的值：
+            margin width left right
+            margin同时设置auto会居中显示
+
+        垂直方向的布局等式也必须满足
+        top+margin-top/bottom+padding-top/bottom+height+bottom=包含块内容区垂直高度
+            当发生过度约束时：
+                如果值中没有auto，自动调整bottom使等式成立
+                如果值中有auto，自动调整auto使等式成立
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

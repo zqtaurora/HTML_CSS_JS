@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            /* overflow: hidden; */
+
+        }
+
+        .box1 div {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+            margin-left: 10px;
+        }
+
+        .box2 {
+            background-color: #bfa;
+            /* animation-name:test;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-iteration-count:1;
+            animation-direction: alternate; */
+            /* 持续时间写在延迟时间前面 */
+            animation:test 2s 1 1s alternate;
+        }
+        .box1:hover div{
+            animation-play-state:paused;
+
+        }
+
+        /* 
+            过渡：属性发生变化时才触发
+            动画 ：自动触发效果
+            animation 必须设置一个关键帧，关键帧设置了动画执行的每一个步骤
+
+        */
+        /* 
+            animation-name:对当前元素生效的关键帧的名字
+            animation-duration:动画的持续时间
+            animation-delay : 动画的延时
+            animation-iteration-count 动画执行的次数 
+            可选值： 次数 infinite(无限执行)
+            animation-direction 动画执行的方向
+                默认值 normal ：从from 到 to 运行 每次都是这样
+                    reverse ：从 to 到 from 运行 每次都是这样
+                    alternate：从from 到 to 运行 再从 to 到 from 运行 来回算执行两次
+                    alternate-reverse：从 to 到 from 运行 再从from 到 to 运行
+            animation-play-state: 动画播放状态
+                可选值
+                    默认值 running 动画运行
+                        paused 动画暂停
+            animation-fill-mode:动画的填充模式
+                可选值：
+                none  默认值 动画结束元素回到初始位置
+                forwards 动画结束元素停在to指定的位置、结束的位置
+                backwards 动画延时等待时动画从from开始（包括位置、颜色等状态）
+                both: 结合backwards 和 forwards
+
+        */
+        @keyframes test {
+            /* from 也可以使用0%表示 */
+            from{
+                margin-left: 0;
+                background-color: #fff;
+            }
+            /* to 可以使用100%表示 */
+            to{
+                margin-left: 700px;
+                background-color: #fffaaa;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3"></div> -->
+    </div>
+</body>
+
+</html>

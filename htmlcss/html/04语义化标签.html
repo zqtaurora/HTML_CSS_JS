@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语义化标签</title>
+</head>
+<body>
+    <!-- 网页中html负责网页的结构
+        所以应关注html标签的语义，而不是它的样式
+
+        1.标题标签（块元素，即自动换行）：
+            h1~h6 重要性递减
+            一般情况下只会使用到h1~3
+            一般情况下h1只有一个
+
+        2.在页面中独占一行的称为块元素(block element);
+          在页面中不会独占一行的叫行内元素(inline element)。
+    -->
+    <h1>这是一级标题</h1>
+    <h2>这是二级标题</h2>
+    <h3>这是三级标题</h3>
+    <h4>这是四级标题</h4>
+    <h5>这是五级标题</h5>
+    <h6>这是六级标题</h6>
+
+    <!--3.hgroup标签用来为标题分组，可以将一组相关的标题放在标签内-->
+    <hgroup>
+        <h1>大标题</h1>
+        <h2>小标题</h2>
+    </hgroup>
+
+    <!--4.p标签表示页面中的段落（块元素），会自动换行-->
+    <p>paragraph</p>
+    <p>paragraph</p>
+
+    <!--5.em标签用来表示语音语调的加重（行内元素），效果：斜体-->
+    <p>para<em>gra</em>ph</p>
+
+    <!--6.strong表示强调，重要内容,效果：加粗-->
+    <p>这是今天的<strong>作业</strong></p>
+
+    <!--7.blockquote 表示一个长引用，效果换行缩进(块元素)-->
+    鲁迅说：
+    <blockquote>
+        我没说过这句话
+    </blockquote>
+
+    <!--8.q短引用，不会换行(行内元素)-->
+    lx:<q>wtf!</q>
+
+</body>
+</html>

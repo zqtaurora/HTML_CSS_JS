@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size:40px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color:#bfa;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color:orange;
+
+            /* margin-left: 200px;
+            margin-top: -200px; */
+            position:relative;
+            top:-200px;
+            left: 200px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color:yellow;
+        }
+        /* 
+        定位：
+            通过定位可以将元素摆到页面的任意位置  
+            使用position属性来设置
+                可选值：
+                    static 默认值，元素是静止的，没有开启定位
+                    relative 开启元素的相对定位
+                    absolute 开启元素的绝对定位
+                    fixed    开启元素的固定定位
+                    sticky   开启元素的粘滞定位
+
+                offset 偏移量：（必须要开启定位以后才能使用）
+                开启定位以后，通过偏移量来设置元素的位置 
+                    top
+                        定位元素和定位位置上边的距离，值越大，越向下
+                    bottom
+                        定位元素和定位位置下边的距离，值越大，越向上
+                    top和bottom共同控制垂直方向上的位置，通常只使用一个值
+                    
+                    left
+                        定位元素和定位位置左边的距离，值越大，越向右
+
+                    right
+                        定位元素和定位位置右边的距离，值越大，越向左
+                    通常只使用一个值   
+
+                relative 相对定位：
+                特点：
+                1.不设置偏移量不会发生任何变化
+                2.相对定位是参照于元素在文档流中的位置进行定位的
+                3.相对定位会提高元素的层级（会覆盖文档流中的内容）
+                4.不会脱离文档流
+                5.不会改变元素的性质
+
+
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>
