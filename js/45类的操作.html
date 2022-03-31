@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .b1{
+        width:100px;
+        height: 100px;
+        background-color: #bfa;
+    }
+    .b2{
+        height: 200px;
+        background-color: #bff;
+    }
+    </style>
+   <script src="tools.js"></script>
+    <script>
+        window.onload=function(){
+            var box=document.getElementById("box");
+
+            var btn01= document.getElementById("btn01");
+            btn01.onclick=function(){
+                // 修改box的样式
+
+                // 每修改一次就重新进行一次渲染，性能差
+                // box.style.width="200px";
+                // box.style.height="200px";
+                // box.style.backgroundColor="yellow";
+
+                // 修改box的class属性
+                // box.className="b2";
+                // box.className+=" b2";
+                // addClass(box,"b2");
+                // alert(hasClass(box,"b2"));
+
+                // removeClass(box,"b2");
+
+                toggleClass(box,"b2");
+            };
+
+
+           
+
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">修改box的样式</button>
+    <br>
+    <br>
+
+    <div id="box" class="b1 b2"></div>
+</body>
+</html>

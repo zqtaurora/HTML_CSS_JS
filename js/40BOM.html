@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            /* 
+            BOM
+                浏览器对象模型，通过js来操作浏览器
+            BOM对象
+                Window
+                    代表整个浏览器的窗口，window也是网页中的全局对象
+                Navigator
+                    代表当前浏览器信息，通过该对象来识别不同的浏览器
+                Location
+                    代表当前浏览器的地址栏
+                History
+                    代表浏览器的历史记录，不能获取具体浏览历史，只能向前或向后翻页
+                Screen
+                    代表用户屏幕信息，通过该对象可以获取用户显示器的相关信息
+
+
+                这些BOM对象都是作为window对象的属性保存，
+                可以通过window对象来使用，也可以直接使用
+
+            
+            */
+
+        //    var ua=navigator.userAgent;
+        //    if(/Chrome/i.test(ua))
+        //    console.log(1);
+
+
+        //    console.log(location);
+           console.log(history);
+           /* 
+           length 获取当前访问的链接数量
+           back() 可以回退到上一个页面，作用和浏览器的回退按钮一样
+           forward() 可以跳转到下一个页面
+           go() 可以用来跳转到指定的页面 一个整数作为参数
+            1:表示向前跳转一个页面 相当于forward()
+            2:表示向前跳转两个页面
+            -1:向后跳转一个页面
+
+
+
+           */
+          //    console.log(screen);
+          
+        var btn= document.getElementsByTagName("button")[0];
+          btn.onclick=function(){
+            // history.forward();
+            // history.go(1);
+            // 触发事件会自动跳转到路径 
+            url="http://baidu.com";
+            // location=url;
+
+            // assign 加载新的文档 用来跳转到其他的页面
+            // location.assign(url);//相当于直接修改location
+
+            // location.reload(true);
+            //参数为true 相当于强制清空缓存  ctrl+f5
+
+            location.replace(url);
+            // 不会生成历史记录，不能回退
+
+        };
+        }
+    </script>
+</head>
+<body>
+    <button>forward</button>
+    <br>
+    <a href="test01.html"> gototest01</a>
+</body>
+</html>

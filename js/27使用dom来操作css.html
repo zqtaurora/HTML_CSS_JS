@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background: #bfa;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 点击按钮以后修改box1的大小
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function () {
+                /* 
+                通过js修改元素的样式：
+                    语法：元素.style.样式名=样式值
+                    在js中background-color命名不合法
+                    应改为驼峰命名法
+                    即 backgroundColor
+                通过style设置的为内联样式
+
+                但如果样式中写了!important 
+                样式拥有最高优先级，则点击按钮不会发生改变
+                */ 
+            //    box1.style.width="300px";
+            //    box1.style.height="300px";
+            //    box1.style.backgroundColor="green";
+
+
+
+            /* 
+            获取当前元素的样式
+            都是只读的，不能修改。
+            语法： 元素.currentStyle.样式名   只有ie支持  width:auto
+            getComputedStyle()  width:实时宽度
+            第二个参数默认是null
+
+            */
+
+            // alert(getComputedStyle(box1,null).width);
+           alert( getStyle(box1,"width"));
+            }; 
+            
+            /* 
+               点击2读取样式
+               */
+            var btn2=document.getElementById("btn02");
+              btn02.onclick=function(){
+                /* 读取box1的样式 */  
+                // 读取到的都是内联样式
+                // alert(box1.style.width);
+
+              };
+
+            /* 用来获取指定元素的样式 */
+            function getStyle(obj,name){
+                return window.getComputedStyle?getComputedStyle(obj,null)[name]:obj.currentStyle[name];
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <button id="btn02">点我一下</button>
+    <br/>
+    <br/>
+
+    <div id="box1"></div>
+</body>
+</html>

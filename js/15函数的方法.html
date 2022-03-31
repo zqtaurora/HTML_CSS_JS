@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(a,b){
+            console.log(this.name);
+            console.log(a);
+            console.log(b);
+
+        }
+
+        /* 
+        call() apply()
+        都是函数对象的方法，需要通过函数对象来调用
+        调用这两个方法时，函数都会执行
+        */
+        var obj={
+                    name:"obj"
+                };
+        
+        fun(); //this是window
+        fun.call(obj);//this 改为 obj
+
+        // fun.call(obj,2,3);      
+        // call函数将参数依次传递  
+        fun.apply(obj,[2,3]);       
+        // apply函数要统一传递 
+        
+
+
+
+        /* 
+        在调用函数时，浏览器每次会传递两个隐含的参数
+        1.this 函数的上下文对象
+        2.封装实参的对象 arguments
+
+        arguments 是一个类数组对象（不是数组）
+        可以通过索引来操作数据，也可以获取长度
+        arguments.length可以获取实参的个数
+        arguments 里面有个属性 callee 指向当前函数对象
+
+        */
+       function fun1(){
+        //    console.log(arguments.length);
+        console.log(arguments.callee==fun1);//true
+       }
+       fun1(1);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

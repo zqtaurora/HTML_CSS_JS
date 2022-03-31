@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+        /* 
+        使用事件的的绑定函数不能同时绑定多个，
+        否则会发生覆盖
+
+        addEventListener()
+        也可以为函数绑定多个响应函数
+        参数：
+            1.事件的字符串，不要on
+            2.回调函数，当事件触发时函数会被调用
+            3.是否在捕获阶段触发事件，需要一个bool值，一般默认填false
+        */
+        var btn=document.getElementById("btn");
+        btn.addEventListener("click",function(){
+            alert(1);
+        },false);
+        btn.addEventListener("click",function(){
+            alert(2);
+        },false);
+
+    };
+    </script>
+</head>
+<body>
+    <button id="btn">1</button>
+</body>
+</html>

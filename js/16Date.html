@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        Date 对象 用来表示时间
+        */
+
+        var d=new Date();
+        console.log(d);//返回当前时间
+
+        // 想要指定返回时间要向函数传递一个表示时间的字符串
+        var d2=new Date("3/10/2022 11:10:25");
+        console.log(d2);
+
+        var date=d2.getDate();//返回日期
+        var date=d2.getDay();//返回日期是周几 周日0 -周六6
+        // getMonth()  月份  0-11 表示 1-12月 0表示1
+        //getFullYear()  获取日期的年份
+        //getTime() 获取当前对象的时间戳
+        //从格林威治时间1970年1月1日，0时0分0秒开始计算的毫秒数
+        console.log(date);
+
+        var d3=new Date("1/1/1970 0:0:0");
+        console.log(d3.getTime());//-28800000  有时区
+
+        // 用来获取当前的时间戳
+       var start= Date.now();
+       for(var  i=0;i<100;i++){
+           console.log(i);
+       }
+       var end= Date.now();
+
+       console.log(end-start);//用来计算程序执行的时间  ms
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

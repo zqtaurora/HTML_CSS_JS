@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        正则表达式
+        
+        */
+    //    创建正则表达式的对象
+    //语法： var reg=new RegExp("正则表达式","匹配模式");
+    // 找含有该正则表达式的字符串
+    // typeof 返回object
+    var reg=new RegExp("a","i");
+    // i 表示忽略大小写  
+    console.log(reg);
+    
+    /* 
+    test() 用来检查一个字符串是否符合正则表达式的规则
+    符合返回true 否则返回false
+    // 用来检查是否含有该正则表达式
+    */
+   var r=reg.test("A");//true
+   console.log(r);
+
+   /* 
+   使用字面量来创建正则表达式
+   语法： var 变量 =/正则表达式/匹配模式
+   如：var reg=/a/i;
+   或者：
+        /a|b/i
+        [ab]
+    含有字母[a-zA-Z]  [A-z]
+    除了[^ ab]
+   */
+    // reg= /[a-zA-Z]/;
+    reg=/[^ab]/;
+    console.log(reg.test("a"));//false
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

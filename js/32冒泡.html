@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        #s{
+            background-color: yellow;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            /* 
+            事件的冒泡
+                事件的向上传导，后代元素的时间触发，祖先元素的相同事件也会触发
+                可通过事件对象取消冒泡
+            */
+
+            // 为s1绑定一个单级响应函数
+            var s1=document.getElementById("s");
+            s1.onclick=function(event){
+                alert("span");
+                // 将事件对象的cancelBubble设置为true,取消冒泡
+                event.cancelBubble=true;
+            };
+
+            var box1= document.getElementById("box1");
+            box1.onclick=function () {
+                alert("box1");
+                event.cancelBubble=true;
+            };
+
+            var body=document.body;
+            body.onclick=function(){
+                alert("body");
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1">
+        box1
+        <span id="s">span</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /* 
+            当鼠标滚轮向下滚动时，box1变长
+                向上滚动时，box1变短
+            */
+           var box1=document.getElementById("box1");
+           box1.onmousewheel = function(){
+            // alert(1);
+
+            /* 
+            判断滚轮滚动的方向
+            event.wheelDelta 
+            向上滚 150 向下滚 -150
+            */
+            // alert(event.wheelDelta);
+
+            //    向上滚变短
+            if(event.wheelDelta>0){
+               box1.style.height=box1.clientHeight-10+"px";
+           }
+            //向下滚变长
+            else{
+                box1.style.height=box1.clientHeight+10+"px";
+            }
+
+
+            /* 
+            如果存在滚动条,滚动条也会移动
+            这是浏览器默认行为，取消用return false
+            */
+                return false;
+
+            /* 
+                使用addEventListener()方法绑定的响应函数，取消默认行为不能使用return false
+                需要使用event来取消默认行为
+            */
+            //    event.preventDefault();
+           };
+           
+        };
+    </script>
+
+</head>
+<body style="height:2000px;">
+    <div id="box1"></div>
+</body>
+</html>

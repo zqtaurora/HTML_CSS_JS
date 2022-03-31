@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload= function () {
+
+                    // var li=document.createElement("li");
+                    // var gzText=document.createTextNode("广州");
+                    // li.appendChild(gzText);
+                    // var bj=document.getElementById("bj");
+                    // var city=document.getElementById("city");
+
+            // 1.创建“广州”节点，添加到#city下
+            myClick("btn01",function(){
+                // 创建广州节点
+                    // 创建li元素节点  
+                    /* 根据标签名字符串创建对应标签元素节点，将对象返回 */
+                    // var li=document.createElement("li");
+                    // 创建广州文本节点
+                    // var gzText=document.createTextNode("广州");
+                    //将gzText添加到li的子节点中
+                    // li.appendChild(gzText);
+                    // 获取city
+                    // var city=document.getElementById("city");
+
+                // 将广州添加到city下
+                city.appendChild(li);
+            });
+            // 2.将“广州”节点插入到#bj前面
+            myClick("btn02",function(){
+                // 创建广州节点
+                var li=document.createElement("li");
+                var gzText=document.createTextNode("广州");
+                li.appendChild(gzText);
+                var city=document.getElementById("city");
+                // 获取id为bj的节点
+                var bj=document.getElementById("bj");
+                // 将广州插入到bj前
+                // insertBefore  父节点调用
+                city.insertBefore(li,bj);
+            });
+            // 3.使用“广州”节点替换#bj节点
+            myClick("btn03",function(){
+                    var li=document.createElement("li");
+                    var gzText=document.createTextNode("广州");
+                    li.appendChild(gzText);
+                    var bj=document.getElementById("bj");
+                    var city=document.getElementById("city");
+
+                    city.replaceChild(li,bj);
+
+            });
+            // 4.删除#bj节点
+            myClick("btn04",function(){
+                // var bj=document.getElementById("bj");
+                // var city=document.getElementById("city");
+                // city.removeChild(bj);
+                bj.parentNode.removeChild(bj);
+            });
+            // 5.读取#city内的HTML代码
+            myClick("btn05",function(){
+                var city=document.getElementById("city");
+                alert(city.innerHTML);
+            });
+            // 6.设置#bj内的HTML代码
+            myClick("btn06",function(){
+                var bj=document.getElementById("bj");
+                bj.innerHTML="杭州";
+            });
+            // 向city中添加广州
+            myClick("btn07",function(){
+                var city=document.getElementById("city");
+                // city.innerHTML+="<li>广州</li>";
+                var li=document.createElement("li");
+                li.innerHTML="广州";
+                city.appendChild(li);
+            });
+        };
+        function myClick(idStr,fun){
+            var btn= document.getElementById(idStr);
+            btn.onclick= fun;
+        }
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>
+                    你喜欢哪个城市？
+            </p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>祁阳</li>
+            </ul>
+        </div>
+    </div>
+    <div id="btnList">
+        <div><button id="btn01">创建“广州”节点，添加到#city下</button></div>
+        <div><button id="btn02">将“广州”节点插入到#bj前面</button></div>
+        <div><button id="btn03">使用“广州”节点替换#bj节点</button></div>
+        <div><button id="btn04">删除#bj节点</button></div>
+        <div><button id="btn05">读取#city内的HTML代码</button></div>
+        <div><button id="btn06">设置#bj内的HTML代码</button></div>
+        <div><button id="btn07">添加#city内的广州</button></div>
+    </div>
+
+</body>
+</html>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+    html{
+        width: 100%;
+    }
+    #total{
+        margin:50px;
+        border: 2px  solid black;
+        width: 320px;
+        border-radius:5px ;
+
+    }
+      
+    p{
+        /* display: block; */
+        height: 20px;
+        line-height:20px ;
+        padding-left:20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    ul{
+        padding: 10px;
+        width: 320px;
+        display: flex;
+        align-items:center;
+        flex-flow:wrap row;
+    }
+    li{
+        flex: 0 0 auto;
+        font-size:13px;
+        height:30px;
+        width: 40px;
+        line-height: 30px;
+        background-color: #bfa;
+        margin:0 10px;
+        text-align:center;
+    }
+    #btnList{
+        float:left;
+        position: absolute;
+        top:15px;
+        left:30rem;
+    }
+    #btnList div{
+        padding:2px 0;
+    }
+
+</style>

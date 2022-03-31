@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        在js中有三个包装类，可以将基本数据类型转化为对象
+        String()
+        Number()
+        Boolean()
+        */
+       var number=new Number(3);
+       console.log(typeof number);
+
+       /* 
+       String 类型
+            length 可以获取字符串的长度
+            str[i] 通过索引来获取字符
+            charAt() 返回指定位置字符,不会对原字符串产生影响
+            charCodeAt() 返回指定位置字符Unicode编码
+            fromCharCode() 根据字符编码去获取字符
+            concat() 连接两个或多个字符串
+            indexOf() 该方法用来检索字符串是否含有指定内容,第二个参数 开始查找的位置
+                如果没找到返回-1
+                找到返回第一个找到的位置
+            lastIndexOf()  从后往前找返回第一个找到的位置
+            slice(a,b)  参数开始的位置，结束的位置 前闭后开 不影响原字符串
+            substring() 与slice()类似
+                区别：substring()不能接受负值，且会自动调整参数的顺序(小到大)
+            substr() 参数：开始的位置 截取的长度
+            split() 根据字符串参数将字符串拆分成数组
+            toUpperCase() 变大写返回
+            toLowerCase() 变小写返回
+        */
+        str="he,ll,o";
+       console.log(str.charAt(1));
+
+       r=String.fromCharCode(72);
+       r=String.fromCharCode(0x2672);
+       console.log(r);
+
+       console.log(str.indexOf("l"));//2
+       console.log(str.lastIndexOf("l"));//3
+       console.log(str.substring(2,1));//e
+       console.log(str.substr(2,5));//llo
+       console.log(str.split(","));
+
+       a="abcdefg";
+       console.log(a.toUpperCase());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

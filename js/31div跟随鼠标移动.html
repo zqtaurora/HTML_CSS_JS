@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+
+            position:absolute;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /* 
+                使div可以跟随鼠标移动
+            */
+           var box1=document.getElementById("box1");
+
+        //    要给document绑定才会触发全局效果
+           document.onmousemove=function(event){
+            //    解决兼容问题
+                // event=event||window.event;
+
+                //    获取滑动滚动条的滚动距离
+                // 浏览器认为滚动条属于html
+                // var st=document.body.scrollTop;
+                var st=document.documentElement.scrollTop;
+                console.log(st);
+
+
+                // 获取鼠标的坐标
+                /* 
+                clientX/clientY获取当前可见窗口的坐标
+                pageX/pageY 获取相对于当前页面的坐标
+                */
+
+                var left=event.pageX;
+                var top=event.pageY;
+
+                // 设置div的偏移量
+                box1.style.left=left+"px";
+                box1.style.top=top+"px";
+           }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

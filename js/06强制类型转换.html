@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            将其他类型转换为String 
+            方法一：
+                调用转换数据类型方法toString()
+                Null、Undefined 没有toString方法
+
+            方法二：
+                调用String()函数
+                对于Number、Boolean直接调用toString()方法
+                对于Null、Undefined
+                null->"null"
+                undefined->"undefined"
+        */
+
+        var a=123;
+        // 该方法不会影响到原变量的值，会返回值
+        var b =a.toString();
+
+        a=true; //此时a的类型是boolean
+
+        a=undefined;
+        // a=a.toString();  报错
+
+        a=123;
+        a=String(a);
+
+
+        console.log(typeof a);
+        console.log(a);
+
+        /* 
+            将其它数据类型转化为Numbe类型
+            方法一：
+                调用Number()函数
+                1.纯数字字符串直接转化为数字
+                2.有非数字内容转化为NaN
+                3.如果字符串是一个空串或全是空格，转化为0
+                4.true 1 false 0
+                5.null->0
+                6.undefined->NaN
+
+            方法二：
+                parseInt() 把字符串转化为整数
+                parseFloat()把字符串转化为浮点数
+
+                对非String，会将其转化为String再操作
+
+        */
+        var c="123";
+        // c="abc"; //NaN
+        // c="";
+        c=Number(c);
+
+        console.log(typeof c);
+        console.log(c);
+
+        a="123px123";
+        a=parseInt(a);
+        // 一旦识别到不是数字的，就停止识别 123px123只能输出123
+        console.log(typeof a);
+        console.log(a);
+
+        a="123.456.789px123";
+        a=parseFloat(a);
+        console.log(typeof a);
+        console.log(a);
+
+        a=198.13;
+        a=parseInt(a);
+        console.log(a);
+
+        /* 
+        将其他类型转化为Boolean类型
+            调用Boolean()函数
+        */
+
+        a=123;//true
+        a=-123;//true
+        a=0;//false
+        a=Infinity;//true
+        a=NaN;//false
+        a=undefined;//false
+        a="123";//true
+        a="";//false
+        a=null;//false
+
+        a=Boolean(a);
+        console.log(typeof a);
+        console.log(a);
+
+        //关系运算符
+        //非数值比较时将其转化为数字再比较
+        console.log(1>"2");//false
+        console.log("11"<"5");
+        //true 字符串之间一位一位比
+        console.log("11"< +"5");
+        //false 字符串前加正号+强转为Number类型
+        console.log(10<"hello");
+        //false,字符串中含非数字强转为NaN
+        console.log(10<NaN);
+        //false,所有值都不能和NaN作比较
+
+
+
+        // 相等运算符
+        // == 如果值类型不同，自动做类型转换
+        console.log("1"==1);// true
+        console.log(true=="hello");//false 不是转成Boolean进行比较
+        console.log(true=="1");//true 转成Number比较
+
+        console.log(null==0);//false 不是转成Number比较
+        
+        // undefined 衍生自 null，做判断时返回true
+        console.log(undefined==null);//true 不是
+
+
+        // NaN 与任何值不相等，包括他本身
+        console.log(NaN==NaN)  //false
+
+        var b=NaN;
+        console.log(isNaN(b));//true 
+
+        // ！= 做了类型转换
+        console.log("1"!=1);//false
+
+        /* 
+        ===  全等 类型也要相等
+        !==  不全等 不会做类型转换
+        */
+
+        console.log(null==undefined);//true
+        console.log(null===undefined);//false
+
+
+
+        //条件运算符
+        /* 
+            条件表达式?语句1：语句2；
+            条件为true 执行语句1
+            条件为false 执行语句2
+        */
+    //    获取ab中的最大值
+       var max=a>b?a:b;
+
+
+       /* 
+       运算符的优先级
+
+       &&高于||
+       */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

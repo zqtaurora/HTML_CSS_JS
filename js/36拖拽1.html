@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position:absolute;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            left:200px;
+            top: 200px;
+            background-color: #bfff;
+            position:absolute;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /* 
+            拖拽：
+            鼠标按下移动，鼠标松开停止
+            */
+           var box1= document.getElementById("box1");
+           var box2= document.getElementById("box2");
+           
+
+            function drag(obj){
+                obj.onmousedown=function(event){
+
+                // 设置box1捕获所有鼠标按下的事件  不支持
+                // box1.setCapture();
+
+                //    为了使鼠标点击的相对位置不变，要把偏移量减去相对位置
+                // div的偏移量 鼠标.clientX -元素.offsetLeft
+                // div的偏移量 鼠标.clientY -元素.offsetTop
+                var ol=event.clientX-obj.offsetLeft;
+                var ot=event.clientY-obj.offsetTop;
+
+                // 为document绑定一个onmousemove事件
+                document.onmousemove = function(event){
+                    var x=event.clientX-ol;
+                    var y=event.clientY-ot;
+                    
+                    obj.style.left=x+"px";
+                    obj.style.top=y+"px";
+                };
+                document.onmouseup=function(){
+                    // 取消document的onmousemove事件
+                    document.onmousemove=null;
+                    // 取消onmouseup事件
+                    document.onmouseup=null;
+                    // alert(1);
+
+                    // 取消box1对事件的捕获  不支持
+                    // box1.releaseCapture();
+                };
+                /* 
+                    拖拽网页中的内容时，浏览器会自动去搜索内容，
+                    可通过return false 取消
+                */
+                    // return false;
+                };
+
+        };
+
+        drag(box1);
+        drag(box2);
+           
+};
+    </script>
+</head>
+<body>
+    <p>wenzi</p>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

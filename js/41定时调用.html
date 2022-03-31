@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var count = document.getElementById("count");
+
+            // for(var i = 0; i < 10; i++){
+            //     count.innerHTML =i;
+
+            // }
+
+            /* 
+            setInterval 定时调用
+                可以将函数每隔一段时间执行一次
+                参数：
+                1.回调函数
+                2.间隔时间  ms
+
+                返回值：
+                返回一个Number类型的数字
+                用来作为定时器的唯一标识
+            */
+           var num=1;
+        //    var timer1=setInterval(function(){
+        //        count.innerHTML=num++;
+        //        if(num==11)
+        //        clearInterval(timer1);
+        //     },1000);
+
+            /* 
+            延时调用
+            只会执行一次
+            */
+           
+          var timer2 = setTimeout(function(){
+               console.log(num++);
+           },3000);
+
+        //    clearTimeout(timer2);
+        };
+    </script>
+</head>
+<body>
+    <h1 id="count">1</h1>
+</body>
+</html>

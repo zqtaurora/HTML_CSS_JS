@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style:none;
+            /* text-decoration: none; */
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            // 点击按钮以后添加超链接
+            var btn01 = document.getElementById("btn01");
+            var ul=document.getElementById("u1");
+            btn01.onclick = function(){
+                // alert("btn01 clicked");
+                var li=document.createElement("li");
+                li.innerHTML="<a href='javascript:;'class='link'>"+"new link"+"</a>";
+
+                ul.appendChild(li);
+            };
+
+
+            /* 为每一个超链接绑定一个单级响应函数 */
+            var allA=document.getElementsByTagName("a");
+            for(var i=0;i<allA.length;i++){
+                allA[i].onclick=function(){
+                    // alert("alink");
+                };
+            }
+
+
+            /* 
+            事件的委派：
+                将事件统一绑定给共同的父元素
+            
+            */
+           ul.onclick = function(){
+            //    event中的target表示触发时间的对象
+            // alert(event.target);
+            if(event.target.className=="link"){
+
+                   alert("u1 link");
+            }
+           };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">add an alink</button>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">1</a></li>
+        <li><a href="javascript:;" class="link">2</a></li>
+        <li><a href="javascript:;" class="link">3</a></li>
+    </ul>
+</body>
+</html>

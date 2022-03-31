@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        /*
+        点击按钮切换图片
+        要切换图片就是要修改img的src属性
+        */
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+
+        // 获取img标签
+        var img = document.getElementsByTagName("img")[0];
+        // 创建一个保存图片路径的数组
+        var imgArr = [
+          "img/1.jpg",
+          "img/2.jpg",
+          "img/3.jpg",
+          "img/4.jpg",
+          "img/5.jpg"
+        ];
+
+        var index = 0;
+
+        // 设置提示文字
+        var info= document.getElementById("info");
+        info.innerHTML="一共"+imgArr.length+"张图片，这是第"+(index+1)+"张";
+        prev.onclick = function () {
+          index--;
+          if (index < 0) index = imgArr.length - 1;
+          img.src = imgArr[index];
+          info.innerHTML="一共"+imgArr.length+"张图片，这是第"+(index+1)+"张";
+
+        // alert("1");
+        };
+        next.onclick = function () {
+          index++;
+          if (index > imgArr.length - 1) index = 0;
+          img.src = imgArr[index];
+        info.innerHTML="一共"+imgArr.length+"张图片，这是第"+(index+1)+"张";
+
+            // alert("2");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div id="outer">
+        <p id="info"></p>
+      <img src="img/1.jpg" alt="jennie" />
+
+      <button id="prev">上一张</button>
+      <button id="next">下一张</button>
+    </div>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  #outer {
+    width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #bfa;
+    text-align: center;
+    overflow: hidden;
+  }
+  img {
+    width: 200px;
+    height: 100px;
+  }
+</style>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload= function () {
+        // 获取body标签
+        // var body=document.getElementsByTagName("body")[0];
+
+        // 在document中有一个属性body，他保存的是body的引用
+        var body=document.body;
+        console.log(body);
+
+        // document.documentElement 保存的是html根标签
+        var html=document.documentElement;
+        console.log(html);
+
+        // all 所有元素
+        var all=document.all;
+        // for(var i=0;i<all.length;i++){
+        //     console.log(all[i]);
+        // }
+        all=document.getElementsByTagName("*");
+        // console.log(all.length);
+
+
+        var box1=document.getElementsByClassName("box1");
+        console.log(box1.length);//1
+        /* 
+        获取页面中的所有div
+        */
+       var divs=document.getElementsByTagName("div");
+       console.log(divs.length);//3
+
+    //    选择box1中的div
+    //document.querySelector(".box1 div");  
+    // 字符串作为参数，根据css选择器来查询节点对象
+    // 只会返回唯一的元素，只会返回第一个
+    var div=document.querySelector(".box1 div");
+    console.log(div.innerHTML);
+
+    // 只会返回数组
+    var divs=document.querySelectorAll(".box1 div");
+    for(var i=0;i<divs.length;i++)
+        console.log(divs[i].innerHTML);
+
+};
+
+        
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div>1.box1中的div</div>
+    </div>
+    <div class="box1">
+        <div>2.box1中的div</div>
+    </div>
+    <div class="box1">
+        <div>3.box1中的div</div>
+    </div>
+    <div></div>
+</body>
+</html>

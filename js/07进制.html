@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        16进制 0x开头
+        8进制 0开头
+        2进制 0b开头
+        
+        */
+
+        // 可能会被当成8进制解析
+       var a="070";
+    //    传递第二个参数，指定数字的进制
+       a=parseInt(a,10);
+       console.log(typeof a);
+       console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+    <script>
+        window.onload= function() {
+            /* 
+            onkeydown 按键按下
+                一直按下就会一直触发，1/2次之间时间较长，是为了防止误操作
+            onkeyup 按键松开
+                只会松开时触发一次
+
+            键盘事件一般绑定给能获取焦点的标签对象
+            */
+            document.onkeydown=function(){
+                // console.log("1");
+
+                /* 
+                可以通过keycode来获取按下按键的编码
+                altKey
+                ctrlKey
+                shiftKey
+                分别用来检测对应的按键是否被按下
+                */
+            //    console.log(event.keyCode);
+            };
+            document.onkeyup=function(){
+                // console.log(2);
+            };
+            var input=document.getElementsByTagName("input")[0];
+            input.onkeydown=function(){
+                console.log(1);
+
+                // 取消默认行为，输入框不显示内容
+                return false;
+
+                // 可以用来限制输入框中的内容
+                // 比如说不含数字 event.keyCode >=48 && event.keyCode <=57  使用return false
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <!-- <div id="box1"></div> -->
+    <input type="text">
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        算术运算符：
+        typeof 返回值是String类型
+        +
+            1.对于不是Number类型的值相加，先转化为Number再相加
+            2.字符串之间相加是拼接
+            3.所有值与NaN相加还是NaN
+            4.任何值与字符串相加，都会转化成字符串相拼接
+        -
+        *
+        /
+        %
+        */
+
+        var result ;
+
+        result=true+1;//2
+        result=2+NaN;//NaN
+        result="123"+"123";//"123123"
+        result=123+"245";//"123245"
+        result=true+"123";//"true123"
+
+        result=123;
+        result=result+"";
+        // 隐式类型转换，转String类型
+
+        result=1+2+"3";//33
+        result=1+"2"+3;//123
+        result="1"+2+3;//123
+        //字符串运算的顺序从左到右
+
+        result=100-"1";//99 number
+
+        result=2*"8";//16
+        result=2*undefined;//NaN
+
+        result="123";
+        result=result-0;
+        result=result/1;
+        result=result*1;
+        // 隐式转化为Number类型
+
+        console.log(typeof result);
+        console.log(result);
+        console.log("result="+result);
+
+
+        /* 
+        一元运算符
+        + 正号
+        - 负号
+        
+        */
+       var a=123;
+       a=+a; //123
+       a=-a;//-123
+
+       a="18";
+       a=+a;//number 18
+       console.log(typeof a);
+       console.log(a);
+
+       /* 
+       逻辑运算符
+       非boolean类型
+       &&  
+            第一个值为true，返回第二个
+            第一个值为false，返回第一个
+       ||
+            第一个值为true，返回第一个
+            第一个值为false，返回第二个
+       */
+
+       a= 1 && 2; //number 2
+       a= 2 && 4; //number 4
+        //  都为true 返回后面那个
+
+        a=0&&2;//0
+        // 有false返回false
+
+        a=NaN&&0;//NaN
+        a=0&&NaN; //0
+
+        // 都为false返回前面那个
+       console.log(typeof a);
+       console.log(a);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

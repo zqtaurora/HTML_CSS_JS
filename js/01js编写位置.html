@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <!-- 也可以通过引入外部js文件 -->
+    <!-- 但是可以创建新的script标签 从上到下执行 -->
+    <script>
+        alert('inner!');
+    </script>
+
+    <script src="./script.js">
+        // 可以写在script标签中
+        // alert('abc!');
+        // 引用外部就不会使用该script内部的js代码
+    </script>
 </head>
 <body>
     <!-- 可与将js代码编写到标签的onclick属性中 -->
     <button onclick="alert('点我干嘛');">点我一下</button>
+
+    <!-- 可以写在超链接的href属性中 -->
+    <a href="javascript:alert('here!')">点我一下</a>
 </body>
 </html>

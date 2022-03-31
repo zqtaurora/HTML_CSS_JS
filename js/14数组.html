@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组也是对象
+
+        */
+
+        // 创建数组对象
+        // 使用字面量来创建数组  语法：[]  在创建时就可以指定元素
+        // var arr=new Array(10);  //只有一个参数时表示长度为10
+        var arr=[1,2,3,4,5,10];
+
+        // 用typeof检查数组对象类型为object
+        console.log(typeof arr);//object
+
+        arr[0]=1;
+        arr[1]=2;
+        console.log(arr[0]);
+        console.log(arr);// [1, 2]
+        console.log(arr[3]);//undefined
+
+
+        /* 
+        获取数组的长度，使用属性length
+        还可以修改数组的长度,
+        大于原长度会增加空值，小于原长度会按照设置的长度进行截断
+        */
+       console.log(arr.length);//2
+       arr.length=1;
+
+       
+       //    向数组的最后一个位置赋值
+       arr[arr.length]=30;
+       arr[arr.length]=20;
+       
+    //    push() 方法  自动添加到数组末尾
+       arr.push(23);
+
+    // pop()  方法 直接删除数组的最后一个元素
+    arr.pop();
+
+    // unshift 向数组的开头添加一个或多个元素
+    arr.unshift(34,27);
+
+    // shift 删除数组的第一个元素，并将删除的值作为返回值返回
+       console.log(arr);
+
+
+    // for(var i=0; i<arr.length; i++){
+    //     console.log(arr[i]);
+    // }
+
+    for(var i in arr){
+        console.log(arr[i]);
+    }
+
+    /* 
+    forEach() 方法需要一个函数作为参数
+        由我们创建但不由我们调用的函数称为回调函数
+        数组中有几个元素就执行几次
+        每次执行时浏览器会将遍历到的元素以实参的形式传递进来
+        -会在每个回调函数中传递三个参数
+            第一个参数：当前遍历的元素
+            第二个参数：元素的下标
+            第三个参数：整个数组
+    */
+   arr.forEach(function(value,index,arr){
+        // console.log(value,index,arr);
+   });
+
+   /* 
+   slice()
+        可以用来从数组中提取元素，不会改变原数组
+        参数：
+            1.截取开始的位置
+            2.截取结束的位置
+        前闭后开
+
+   */
+  var r=arr.slice(0,2);//包括arr[0],不包括arr[2]
+  console.log(r);
+
+   /* 
+   splice()
+        用于删除数组中的指定元素
+        会影响到原数组，并将删除的元素作为返回值返回
+        参数：
+            第一个参数：表示开始位置的索引
+            第二个参数：表示删除的数量
+            第三个及以后参数：自动插入到开始位置索引前边
+   
+   */
+   r=arr.splice(2,2,12,13,13);
+   console.log(r);
+   console.log(arr);
+
+   /* 
+   concat()方法 可以连接两个或多个数组，并将新数组返回
+        该方法不会对原数组产生影响
+   */
+  arr=[1,2,3];
+  arr2=[1,2,3,2];
+  arr3=[2,4,6]
+  var r=arr.concat(arr2,arr3,6,7);
+  console.log(r);
+
+  /* 
+  join()函数：
+        可以将数组转化为字符串
+        该方法不会对原数组产生影响
+        可以指定一个字符串作为参数作为原数组的连接符
+  
+  */
+   r=arr.join("-");
+   console.log(r);
+
+   /* 
+   
+   reverse() 反转，会直接修改数组
+
+   sort()  会影响原数组，默认按照unicode编码排序
+   对于纯数组  11会在2前面
+   对此，我们自己在sort函数中添加回调函数来指定排序规则
+            1.回调函数需要定义两个形参，
+            浏览器会分别将数组的元素作为实参去调用函数，前后顺序确定。
+            2.浏览器会根据返回值来决定元素的顺序
+                返回一个大于0的值，元素会交换位置
+                        小于0，位置不变
+                            0，认为两个元素相等也不交换
+   */       
+
+   arr=[5,4,3,6,8,1];
+   arr.sort(function(a,b){
+       return a-b;
+   });
+   console.log(arr);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

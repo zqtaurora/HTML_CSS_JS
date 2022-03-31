@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        1.内建对象
+            由ES标准中定义的对象，任何的ES的实现中都可以使用
+            比如：
+                Math、String、Number、Boolean、Function、Object...
+
+        2.宿主对象
+            由JS的运行环境提供的对象，主要指浏览器提供的对象
+            比如：
+                BOM、DOM
+        3.自建对象
+
+        */
+
+        // 创建对象
+        var a=new Object();
+        a.name="abc";
+        a.age=18;
+        console.log(a);
+
+        console.log(a.gender);//Undefined
+        // 对象中不存在的变量被视为未被定义
+
+        delete a.name;
+        console.log(a.name);//undefined
+
+        /* 
+         属性名
+          1.可以随便取，var 也可以取
+          2.使用特殊的属性名 格式：
+                对象["属性名"]=属性值
+        
+        */
+       var obj=new Object();
+       obj["123"]=789;
+       obj.name="zqt";
+       console.log(obj["123"]);
+
+       var obj2=obj;
+    //    var obj2=new Object();
+        console.log(obj2.name);//zqt
+
+
+        obj.name="zqt2";
+        console.log(obj.name);//zqt2
+        console.log(obj2.name);//zqt2
+        /* 
+        JS的变量都是保存到栈内存中
+            基本数据类型的值都是在栈内存中存储，
+            值与值之间都是独立存在的，不会互相影响
+
+            对象保存到堆内存中，每新建一个对象就会在堆内存中开辟新的空间，
+            变量（对象的名字）存储在栈内存中，对应的属性值为在堆内存中的地址
+            两个变量指向同一个地址，当一个变量修改其中的属性，另一个也会发生改变
+        
+        */
+
+        obj2=null;//obj2断开与原地址的连接，obj不受影响
+
+        console.log(obj); //Object
+        console.log(obj2);//null
+
+
+        /* 
+        使用字面量来创建对象
+        语法：{属性名：属性值，属性名：属性值...}
+        
+        */
+       var a={};
+    //    console.log(typeof a); //object
+
+    a.name="abc";
+    console.log(a.name);
+
+    var b={
+        name:"bcd",
+        age:"18",
+        test:{name:"abc"},//可以为对象
+        sayName:function(){
+        console.log(b.name);
+    }
+    };
+    console.log(b);
+    b.sayName();
+
+
+    /* 
+    作用域
+    1.全局作用域
+        有一个全局对象window，
+        所有全局作用域中的变量都作为window的属性保存
+        所有全局作用域中的函数都作为window的方法 保存
+
+    
+    */
+   var c=10;
+   console.log(window.c);//10
+   //console.log(d);//error
+   console.log(window.d);//undefined
+
+   console.log(typeof null);//Object
+
+   function createPerson(name,age,gender){
+        var obj=new Object();
+
+        // 给函数添加属性
+        obj.name=name;
+        obj.age=age;
+        obj.gender=gender;
+        obj.sayName=function(){
+            console.log(this.name);
+        };
+        return obj;
+   }
+   var obj1=createPerson("123",12,1);
+   obj1.sayName();
+
+   function Person(name,age,gender){
+       this.name=name;
+       this.age=age;
+       this.gender=gender;
+
+   }
+   var per=new Person("abc",12,2);
+   console.log(per);
+
+   /* 
+   instanceof 检查对象是否是类的实例
+   返回值 true false
+   */
+   console.log(per instanceof Person);//true
+   console.log(per instanceof Object);//true
+
+   /* 
+    解析器会向每一个函数中添加一个属性prototype
+        这个属性对应一个对象，即所谓的原型对象
+    普通函数中的prototype没有任何作用
+    构造函数调用prototype时，会为对象创建一个隐含的属性
+        指向构造函数的原型对象，通过__proto__来访问该属性
+
+        Object对象没有原型
+   */
+   console.log(per.__proto__==Person.prototype);//true
+
+   /* 
+    向原型对象中添加属性，首先在自身对象中查找该属性，
+    找不到再去原型对象中查找
+   */
+   Person.prototype.a=123;
+   Person.prototype.sayName=function(){
+       alert(this.name);
+   }
+   console.log(per.a);//123
+//    per.a=456;
+   console.log(per.a);//456
+
+//    per.sayName();
+
+   /* 
+    使用in检查对象中是否含有某个属性值时，如果对象中没有但原型对象中有，也会返回true
+    使用对象的hasOwnProperty()来检查对象自身是否含有该属性
+   */
+  console.log("a" in per);//true  记得用双引号将属性名包含
+  console.log(per.hasOwnProperty("a"));//false
+  console.log(per.hasOwnProperty("hasOwnProperty"));//false
+
+    console.log(per.__proto__.__proto__);//Object
+    console.log(per.__proto__.__proto__.__proto__);//null
+    console.log(Person.prototype.prototype);//undefined
+
+
+   /* 
+    当我们直接在页面中打印一个对象时，输出的是对象的toString()方法的返回值
+   */
+    console.log(per);
+
+    console.log(per.hasOwnProperty("toString"));//false
+    console.log(per.__proto__.__proto__.hasOwnProperty("toString"));//true
+
+
+    // 对象回收  将不需要的对象设置成null  自动回收
+    per=null;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

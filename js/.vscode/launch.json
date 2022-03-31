@@ -1,0 +1,14 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open 03字面量和变量.html",
+            "file": "d:\\前端学习资料\\学习代码笔记\\js\\03字面量和变量.html"
+        }
+    ]
+}

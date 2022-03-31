@@ -1,0 +1,40 @@
+div.sdmenu{
+		width: 150px;
+		margin: 0 auto;
+		font-family: "arial, helvetica, sans-serif";
+		font-size: 12px;
+		padding-bottom: 10px;
+		background-color: #1477fe;
+		color: #FFFFFF;
+		border-radius: 0.625rem;
+	}
+	div.sdmenu div{
+		background-color: #1477fe;
+		overflow: hidden;
+	}
+	
+	div.sdmenu div.collapsed{
+		height: 25px;
+	}
+	div.sdmenu div span{
+		display: block;
+		height: 15px;
+		line-height: 15px;
+		overflow: hidden;
+		padding: 5px 25px;
+		font-weight: bold;
+		color: white;
+		cursor: pointer;
+		border-bottom: 1px solid #e4e4e4;
+	}
+	div.sdmenu div a{
+		display: block;
+		border-bottom: 1px solid #e4e4e4;
+		padding: 0.3125rem;
+		color: #576b95;
+		background-color: #F5F5F5;
+	}
+	div.sdmenu div a:hover{
+		background-color: #576b95;
+		color: #FFFFFF;
+	}
